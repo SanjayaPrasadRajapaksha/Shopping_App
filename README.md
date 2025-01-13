@@ -1,2 +1,2 @@
-# E-Commerce-MERN-Group-Project
+# demo-ecommerce
  
