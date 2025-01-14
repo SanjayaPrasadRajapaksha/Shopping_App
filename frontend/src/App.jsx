@@ -10,6 +10,7 @@ import PlaceOder from "./pages/PlaceOder";
 import Orders from "./pages/Orders";
 import NavBar from "./components/Navbar";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/place-oder" element={<PlaceOder />} />
         <Route path="/orders" element={<Orders />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
