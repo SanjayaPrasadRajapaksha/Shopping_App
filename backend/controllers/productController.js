@@ -38,7 +38,7 @@ const addProduct = async (req, res) => {
         res.json({ success: true, message: "Product added successfully" });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, msg: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 }
 
@@ -49,7 +49,7 @@ const listProducts = async (req, res) => {
         res.json({ success: true, products });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, msg: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 }
 
@@ -60,7 +60,7 @@ const removeProduct = async (req, res) => {
         res.json({ success: true, message: "Product removed" });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, msg: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 }
 
@@ -72,7 +72,7 @@ const singleProducts = async (req, res) => {
         res.json({ success: true, product });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, msg: error.message });
+        res.status(500).json({ success: false, message: error.message });
     }
 }
 
