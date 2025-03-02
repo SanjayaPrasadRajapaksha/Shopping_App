@@ -1,19 +1,19 @@
 // add product to user cart
-const addToCart = (req, res) => {
+const addToCart = async (req, res) => {
 
 }
 
 // update user cart
-const updateCart = (req, res) => {
+const updateCart = async (req, res) => {
 
 }
 
 // get user cart data
-const getUserCart = (req, res) => {
+const getUserCart = async (req, res) => {
 
 }
 
-export default {
+export {
     addToCart,
     updateCart,
     getUserCart,
