@@ -11,9 +11,10 @@ const authUser = async (req, res, next) => {
 
         // Verify the token
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.body.uerId = decoded.id
+        req.body.userId = decoded.id
+        console.log("id",decoded)
         next();
-        
+
     } catch (error) {
         console.error(error);
         res.status(401).json({ success: false, message: "Invalid or expired token" });
