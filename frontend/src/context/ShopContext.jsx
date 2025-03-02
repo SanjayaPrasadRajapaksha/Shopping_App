@@ -34,14 +34,14 @@ const ShopContextProvider = (props) => {
       cartData[itemId][size] = 1;
     }
     setCartItems(cartData);
-if(token) {
-  try {
-    await axios.post(backendUrl +"/api/cart/add", {itemId,size}, {headers: {token:token}})
-  } catch (error) {
-    console.log(error);
-    toast.error(error.message);
-  }
-}
+    if (token) {
+      try {
+        await axios.post(backendUrl + "/api/cart/add", { itemId, size }, { headers: { token: token } })
+      } catch (error) {
+        console.log(error);
+        toast.error(error.message);
+      }
+    }
 
   };
 
@@ -64,6 +64,14 @@ if(token) {
 
     cartData[itemId][size] = quantity;
     setCartItems(cartData);
+    if (token) {
+      try {
+        await axios.post(backendUrl + "/api/cart/update", { itemId, size, quantity }, { headers: { token: token } })
+      } catch (error) {
+        console.log(error);
+        toast.error(error.message);
+      }
+    }
   };
 
   const getCartAmount = () => {
@@ -75,33 +83,35 @@ if(token) {
           if (cartItems[items][item] > 0) {
             totalAmount += itemInfo.price * cartItems[items][item];
           }
-        } catch (error) { }
+        } catch (error) {
+
+        }
       }
     }
     return totalAmount;
   };
-const getProductData = async () => {
-  try {
-    const response = await axios.get(backendUrl+"/api/product/list")
-    if(response.data.success) {
-      setProducts(response.data.products)
-    } else {
-      toast.error(response.data.message)
+  const getProductData = async () => {
+    try {
+      const response = await axios.get(backendUrl + "/api/product/list")
+      if (response.data.success) {
+        setProducts(response.data.products)
+      } else {
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      toast.error(error.message);
     }
-  } catch (error) {
-    toast.error(error.message);
   }
-}
-useEffect(() => {
-  getProductData();
- 
-},[])
+  useEffect(() => {
+    getProductData();
 
-useEffect(()=>{
-  if(!token && localStorage.getItem('token')){
-    setToken(localStorage.getItem('token'))
-  }
-},[]);
+  }, [])
+
+  useEffect(() => {
+    if (!token && localStorage.getItem('token')) {
+      setToken(localStorage.getItem('token'))
+    }
+  }, []);
   const value = {
     products,
     currency,
