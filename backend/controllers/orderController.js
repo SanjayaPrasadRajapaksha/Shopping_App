@@ -1,5 +1,5 @@
-import orderModel from "../models/orderModel";
-import userModel from "../models/userModel";
+import orderModel from "../models/orderModel.js";
+import userModel from "../models/userModel.js";
 
 // Placing order using COD method
 const placeOrder = async (req, res) => {
@@ -10,7 +10,7 @@ const placeOrder = async (req, res) => {
             items,
             address,
             amount,
-            paymentMethos: 'COD',
+            paymentMethod: 'COD',
             payment: false,
             date: Date.now()
         }
