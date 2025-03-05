@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../components/Title";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Orders = () => {
   const { backendUrl, token, currency } = useContext(ShopContext);
@@ -14,10 +15,10 @@ const Orders = () => {
         return null
       }
       const response = await axios.post(backendUrl + '/api/order/userorders', {}, { headers: { token } });
-      if(response.data.success) {
+      if (response.data.success) {
         let allOrdersItem = [];
-        response.data.orders.map ((order)=> {
-          order.items.map((item)=> {
+        response.data.orders.map((order) => {
+          order.items.map((item) => {
             item['status'] = order.status;
             item['payment'] = order.payment;
             item['paymentMethod'] = order.paymentMethod;
@@ -28,7 +29,8 @@ const Orders = () => {
         setOrderData(allOrdersItem.reverse());
       }
     } catch (error) {
-      
+      console.error("Error while processing the order:", error); // Log error details
+      toast.error(error.message);
     }
   }
   useEffect(() => {
