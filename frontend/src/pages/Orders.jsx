@@ -51,7 +51,7 @@ const Orders = () => {
                 <img className="w-16 sm:w-20 " src={item.image[0]} alt="" />
                 <div>
                   <p className="sm:text-base font-medium">{item.name}</p>
-                  <div className="flex items-center gap-3 mt-2 text-base text-gray-700">
+                  <div className="flex items-center gap-3 mt-1 text-base text-gray-700">
                     <p className="text-lg">
                       {currency}
                       {item.price}
@@ -59,10 +59,10 @@ const Orders = () => {
                     <p>Quantity: {item.quantity}</p>
                     <p>Size: {item.size}</p>
                   </div>
-                  <p className="mt-2">
+                  <p className="mt-1">
                     Date: <span className="text-gray-400 ">{new Date(item.date).toDateString()}</span>
                   </p>
-                  <p className="mt-2">
+                  <p className="mt-1">
                     Payment: <span className="text-gray-400 ">{item.paymentMethod}</span>
                   </p>
                 </div>
@@ -72,7 +72,7 @@ const Orders = () => {
                   <p className="min-w-2 h-2 rounded-full bg-green-500"></p>
                   <p className="text-sm md:text-base">{item.status}</p>
                 </div>
-                <button className="border px-4 py-2 text-sm font-medium rounded-sm ">Track Order</button>
+                <button onClick={loadOrderData} className="border px-4 py-2 text-sm font-medium rounded-sm ">Track Order</button>
               </div>
             </div>
           ))}
