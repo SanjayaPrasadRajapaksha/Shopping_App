@@ -28,7 +28,6 @@ const PlaceOder = () => {
   };
 
   const onSubmitHandler = async (event) => {
-    console.log("hi");
     event.preventDefault();
 
     try {
