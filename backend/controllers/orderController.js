@@ -17,7 +17,7 @@ const placeOrder = async (req, res) => {
         const newOrder = new orderModel(orderData);
         await newOrder.save();
 
-        await userModel.findByIdAndUpdate(userId, {cartData:{}})
+        await userModel.findByIdAndUpdate(userId, { cartData: {} })
         res.json({ success: true, message: "Product Placed" });
     } catch (error) {
         console.error(error);
@@ -42,7 +42,14 @@ const allOrders = async (req, res) => {
 
 // User order data for Frontend
 const userOrders = async (req, res) => {
-
+    try {
+        const { userId } = req.body;
+        const orders = await orderModel.find(userId);
+        res.json({ success: true, orders });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
 }
 
 // User order status for Admin panel
