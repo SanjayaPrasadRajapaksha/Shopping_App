@@ -3,7 +3,7 @@ import userModel from "../models/userModel.js";
 import Stripe from "stripe";
 
 // global variables
-const currency = "lkr";
+const currency = "usd";
 const deliveryCharge = 10;
 
 // gateway initialisation
@@ -70,7 +70,7 @@ const placeOrderStripe = async (req, res) => {
             quantity: 1
         })
 
-        const session = await stripe.checkout.session.create({
+        const session = await stripe.checkout.sessions.create({
             success_url: `${origin}/verify?success=true&orderId=${newOrder._id}`,
             cancel_url: `${origin}/verify?success=false&orderId=${newOrder._id}`,
             line_items,
