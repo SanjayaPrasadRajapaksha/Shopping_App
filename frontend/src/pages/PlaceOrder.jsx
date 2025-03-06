@@ -187,7 +187,7 @@ const PlaceOder = () => {
               ></p>
               <img className="h-5 mx-4" src={assets.stripe_logo} alt="" />
             </div>
-            <div
+            {/* <div
               onClick={() => setMethod("razorpay")}
               className="flex itmes-center gap-3 border p-2 px-3 cursor-pointer"
             >
@@ -196,7 +196,7 @@ const PlaceOder = () => {
                   } `}
               ></p>
               <img className="h-5 mx-4" src={assets.razorpay_logo} alt="" />
-            </div>
+            </div> */}
             <div
               onClick={() => setMethod("cod")}
               className="flex itmes-center gap-3 border p-2 px-3 cursor-pointer"
@@ -206,7 +206,7 @@ const PlaceOder = () => {
                   } `}
               ></p>
               <p className="text-gray-500 text-sm font-medium mx-4">
-                CASH ON DELIVERY
+              CASH ON DELIVERY (Sri Lanka only)
               </p>
             </div>
           </div>
