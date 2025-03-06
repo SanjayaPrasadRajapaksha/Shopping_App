@@ -7,10 +7,8 @@ const Footer = () => {
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
         <div>
           <img src={assets.logo} className="mb-5 w-32" alt="" />
-          <p className="w-full md:w-2/3 text-gray-600 ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-            cupiditate quisquam ducimus voluptatem nobis dolorem deserunt
-            voluptas debitis hic unde!
+          <p className="w-full md:w-2/3 text-gray-600 text-justify">
+          At Dressbay, we bring fashion closer to you with a curated selection of stylish and high-quality apparel. From trendy outfits to timeless classics, we offer something for every occasion. Shop with confidence and enjoy a seamless experience with secure payments, fast delivery, and exceptional customer support. Stay fashionable, stay confident—only at Dressbay!
           </p>
         </div>
         <div>
