@@ -61,7 +61,7 @@ const Collection = () => {
         setFilterProducts(fpCopy.sort((a, b) => b.price - a.price));
         break;
       default:
-        applyFilter();
+        applyFilter();;
         break;
     }
   };
